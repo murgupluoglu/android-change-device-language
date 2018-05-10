@@ -24,7 +24,7 @@ public class App extends Application {
             case "tr":
                 LanguageUtil.changeLanguage(this, new Locale("tr"));
                 break;
-            default:
+            case "zh":
                 LanguageUtil.changeLanguage(this, Locale.CHINESE);
                 break;
         }

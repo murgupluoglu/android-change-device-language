@@ -39,8 +39,11 @@ public class SecondActivity extends AppCompatActivity {
         }else if(view.getId() == R.id.button_turkish){
             LanguageUtil.changeLanguage(this, new Locale("tr"));
             preferences.edit().putString("LANGUAGE", "tr").apply();
+        }else if(view.getId() == R.id.button_chinese){
+            LanguageUtil.changeLanguage(this, Locale.CHINESE);
+            preferences.edit().putString("LANGUAGE", "zh").apply();
         }
 
-        finish();
+        recreate();
     }
 }
