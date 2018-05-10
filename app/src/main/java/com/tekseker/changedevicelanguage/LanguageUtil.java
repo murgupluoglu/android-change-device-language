@@ -19,18 +19,6 @@ public class LanguageUtil extends ContextWrapper{
         super(base);
     }
 
-    public static void changeLanguageType(Context context, Locale localelanguage) {
-        Resources resources = context.getApplicationContext().getResources();
-        DisplayMetrics dm = resources.getDisplayMetrics();
-        Configuration config = resources.getConfiguration();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            config.setLocale(localelanguage);
-        }else{
-            config.locale = localelanguage;
-            resources.updateConfiguration(config, dm);
-        }
-    }
-
     public static Locale getCurrentLocale(Context context) {
         Resources resources = context.getApplicationContext().getResources();
         Configuration config = resources.getConfiguration();
@@ -42,8 +30,8 @@ public class LanguageUtil extends ContextWrapper{
     }
 
     @TargetApi(Build.VERSION_CODES.N)
-    public static ContextWrapper wrap(Context context, Locale newLocale) {
-        Resources res = context.getResources();
+    public static ContextWrapper changeLanguage(Context context, Locale newLocale) {
+        Resources res = context.getApplicationContext().getResources();
         Configuration configuration = res.getConfiguration();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

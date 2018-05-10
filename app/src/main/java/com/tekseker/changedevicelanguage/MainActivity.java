@@ -29,6 +29,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         Locale languageType = LanguageUtil.getCurrentLocale(newBase);
-        super.attachBaseContext(LanguageUtil.wrap(newBase, languageType));
+        super.attachBaseContext(LanguageUtil.changeLanguage(newBase, languageType));
     }
 }

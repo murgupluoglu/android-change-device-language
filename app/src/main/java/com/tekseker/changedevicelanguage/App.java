@@ -19,15 +19,14 @@ public class App extends Application {
         String lang = preferences.getString("LANGUAGE", "en");
         switch (lang) {
             case "en":
-                LanguageUtil.changeLanguageType(this, Locale.ENGLISH);
+                LanguageUtil.changeLanguage(this, Locale.ENGLISH);
                 break;
             case "tr":
-                LanguageUtil.changeLanguageType(this, new Locale("tr"));
+                LanguageUtil.changeLanguage(this, new Locale("tr"));
                 break;
             default:
-                LanguageUtil.changeLanguageType(this, Locale.CHINESE);
+                LanguageUtil.changeLanguage(this, Locale.CHINESE);
                 break;
         }
-
     }
 }

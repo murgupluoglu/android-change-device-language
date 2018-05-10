@@ -28,16 +28,16 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         Locale languageType = LanguageUtil.getCurrentLocale(newBase);
-        super.attachBaseContext(LanguageUtil.wrap(newBase, languageType));
+        super.attachBaseContext(LanguageUtil.changeLanguage(newBase, languageType));
     }
 
 
     public void setLanguage(View view){
         if(view.getId() == R.id.button_english){
-            LanguageUtil.changeLanguageType(this, Locale.ENGLISH);
+            LanguageUtil.changeLanguage(this, Locale.ENGLISH);
             preferences.edit().putString("LANGUAGE", "en").apply();
         }else if(view.getId() == R.id.button_turkish){
-            LanguageUtil.changeLanguageType(this, new Locale("tr"));
+            LanguageUtil.changeLanguage(this, new Locale("tr"));
             preferences.edit().putString("LANGUAGE", "tr").apply();
         }
 
