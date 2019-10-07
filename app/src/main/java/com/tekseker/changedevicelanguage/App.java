@@ -2,7 +2,8 @@ package com.tekseker.changedevicelanguage;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+
+import androidx.preference.PreferenceManager;
 
 import java.util.Locale;
 
